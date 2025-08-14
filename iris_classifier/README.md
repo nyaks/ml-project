@@ -6,6 +6,8 @@ This is a simple machine learning project that trains a logistic regression mode
 
 -   `iris.csv`: The dataset used for training and testing.
 -   `train_model.py`: The main script to train the model and evaluate its performance.
+-   `app.py`: The Streamlit application script.
+-   `iris_model.joblib`: The saved trained model.
 -   `requirements.txt`: A list of Python dependencies required to run the project.
 -   `.gitignore`: Specifies which files and directories to ignore in version control.
 
@@ -23,3 +25,13 @@ This is a simple machine learning project that trains a logistic regression mode
     python3 train_model.py
     ```
     This will train the model and print its accuracy on the test set.
+
+### Running the Streamlit App
+
+To run the Streamlit app, use the following command:
+
+```bash
+streamlit run iris_classifier/app.py
+```
+
+This will open a new tab in your browser with the Iris Classifier app.

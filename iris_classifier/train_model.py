@@ -3,11 +3,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 import os
+import joblib
 
 def train_model():
     """
     Loads the Iris dataset, trains a logistic regression model,
-    and evaluates its performance.
+    evaluates its performance, and saves the trained model.
     """
     # Load the dataset
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -33,6 +34,11 @@ def train_model():
     # Evaluate the model
     accuracy = accuracy_score(y_test, y_pred)
     print(f"Model Accuracy: {accuracy:.2f}")
+
+    # Save the trained model
+    model_path = os.path.join(script_dir, 'iris_model.joblib')
+    joblib.dump(model, model_path)
+    print(f"Model saved to {model_path}")
 
 if __name__ == '__main__':
     train_model()
